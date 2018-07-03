@@ -118,7 +118,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is the text of my tweet! AYY" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMe-v1-KxN" customClass="TTTAttributedLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is the text of my tweet! AYY" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMe-v1-KxN">
                                             <rect key="frame" x="78" y="23" width="268" height="104"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
@@ -129,6 +129,7 @@
                                             <rect key="frame" x="89" y="118" width="31" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="retweet-icon"/>
+                                            <state key="selected" image="retweet-icon-green"/>
                                             <connections>
                                                 <action selector="retweetButton:" destination="mpA-pw-Hui" eventType="touchUpInside" id="cNz-jw-NQg"/>
                                             </connections>
@@ -137,6 +138,7 @@
                                             <rect key="frame" x="212" y="118" width="31" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="favor-icon"/>
+                                            <state key="selected" image="favor-icon-red"/>
                                             <connections>
                                                 <action selector="favoriteButton:" destination="mpA-pw-Hui" eventType="touchUpInside" id="XcH-tn-fGv"/>
                                             </connections>
@@ -255,6 +257,8 @@
         <image name="close-icon" width="26" height="24"/>
         <image name="edit-icon" width="30" height="27"/>
         <image name="favor-icon" width="30" height="30"/>
+        <image name="favor-icon-red" width="30" height="30"/>
         <image name="retweet-icon" width="30" height="30"/>
+        <image name="retweet-icon-green" width="30" height="30"/>
     </resources>
 </document>
