@@ -29,7 +29,7 @@
     [self getTweets];
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    [refreshControl addTarget:self action:@selector(getTweets:) forControlEvents:UIControlEventValueChanged];
+    [refreshControl addTarget:self action:@selector(getTweets) forControlEvents:UIControlEventValueChanged];
     
 }
 
@@ -37,12 +37,14 @@
      [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
          if (tweets) {
             self.tweetArray = tweets;
-            [self.timelineTableView reloadData];
-            [self.refreshControl endRefreshing];
+             [self.timelineTableView reloadData];
              } else {
             NSLog(@"Error getting home timeline: %@", error.localizedDescription);
              }
+         [self.refreshControl endRefreshing];
          }];
+     
+     //[task resume];
  }
 
 
