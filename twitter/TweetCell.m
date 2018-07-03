@@ -50,7 +50,7 @@
                 NSLog(@"Error unretweeting tweet: %@", error.localizedDescription);
             }
             else{
-                NSLog(@"Successfully retweeted the following Tweet: %@", tweet.text);
+                NSLog(@"Successfully unretweeted the following Tweet: %@", tweet.text);
             }
         }];
         
