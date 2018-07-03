@@ -24,17 +24,16 @@
     
     self.timelineTableView.dataSource = self;
     self.timelineTableView.delegate = self;
-    
-    // Get timeline
+
     [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
         if (tweets) {
             self.tweetArray = tweets;
-            NSLog(@"%@", tweets);
             [self.timelineTableView reloadData];
         } else {
-            NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
+            NSLog(@"Error getting home timeline: %@", error.localizedDescription);
         }
     }];
+    //UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
 }
 
 
