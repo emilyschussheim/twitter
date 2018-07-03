@@ -20,6 +20,7 @@
 		F3412A7120EAC75300377035 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F3412A7020EAC75300377035 /* User.m */; };
 		F3412A7420EAC83C00377035 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = F3412A7320EAC83C00377035 /* Tweet.m */; };
 		F3412A7A20EAD32100377035 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3412A7920EAD32100377035 /* TweetCell.m */; };
+		F3412A8020EC153F00377035 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3412A7F20EC153F00377035 /* ComposeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,8 @@
 		F3412A7320EAC83C00377035 /* Tweet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
 		F3412A7820EAD32100377035 /* TweetCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
 		F3412A7920EAD32100377035 /* TweetCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
+		F3412A7E20EC153F00377035 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		F3412A7F20EC153F00377035 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 		6AD2790320BCC01B0085BC29 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F3412A7E20EC153F00377035 /* ComposeViewController.h */,
+				F3412A7F20EC153F00377035 /* ComposeViewController.m */,
 				6AD2790420BCC0380085BC29 /* LoginViewController.h */,
 				6AD2790520BCC0380085BC29 /* LoginViewController.m */,
 				6AD2790720BCC04D0085BC29 /* TimelineViewController.h */,
@@ -252,6 +257,7 @@
 				6AD278F320BCA6020085BC29 /* BDBOAuth1SessionManager+SFAuthenticationSession.m in Sources */,
 				F3412A7120EAC75300377035 /* User.m in Sources */,
 				F3412A7A20EAD32100377035 /* TweetCell.m in Sources */,
+				F3412A8020EC153F00377035 /* ComposeViewController.m in Sources */,
 				6AD278E820BC4B970085BC29 /* main.m in Sources */,
 				F3412A7420EAC83C00377035 /* Tweet.m in Sources */,
 				6AD2790620BCC0380085BC29 /* LoginViewController.m in Sources */,

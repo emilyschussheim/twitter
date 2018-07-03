@@ -34,4 +34,10 @@
 }
 */
 
+- (IBAction)tweetButton:(id)sender {
+}
+
+- (IBAction)closeButton:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
 @end
