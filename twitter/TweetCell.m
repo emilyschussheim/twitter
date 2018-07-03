@@ -15,16 +15,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
-    self.tweetText.text = self.tweet.text;
-    self.dateLabel.text = self.tweet.createdAtString;
-    self.propicImage.image = nil;
-    if (self.tweet.user.propicURL != nil) {
-        [self.propicImage setImageWithURL:self.tweet.user.propicURL];
-    }
-    self.nameLabel.text = self.tweet.user.name;
-    self.usernameLabel.text = self.tweet.user.screenName;
-    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -37,14 +27,26 @@
     _tweet = tweet;
     self.tweetText.text = self.tweet.text;
     self.dateLabel.text = self.tweet.createdAtString;
-    //self.propicImage.image = nil;
-    //if (self.tweet.user.propicURL != nil) {
-        [self.propicImage setImageWithURL:self.tweet.user.propicURL];
-    NSLog(@"The ProPic URL: %@ THATS THE END", self.tweet.user.propicURL);
-    //}
+    [self.propicImage setImageWithURL:self.tweet.user.propicURL];
     self.nameLabel.text = self.tweet.user.name;
     self.usernameLabel.text = self.tweet.user.screenName;
+    self.retweetLabel.text = [NSString stringWithFormat:@"%i", self.tweet.retweetCount];
+    self.favoriteLabel.text = [NSString stringWithFormat:@"%i", self.tweet.favoriteCount];
     
 }
 
+- (IBAction)retweetButton:(id)sender {
+    if ([[self.retweenButtonProperty imageForState:UIControlStateNormal] isEqual: [UIImage imageNamed:@"retweet-icon-green"]]) {
+        [self.retweenButtonProperty setImage:[UIImage imageNamed:@"retweet-icon"] forState:UIControlStateNormal];
+    } else {
+    [self.retweenButtonProperty setImage:[UIImage imageNamed:@"retweet-icon-green"] forState:UIControlStateNormal];
+    }
+}
+
+- (IBAction)favoriteButton:(id)sender {
+    if ([[self.favoriteButtonProperty imageForState:UIControlStateNormal] isEqual: [UIImage imageNamed:@"favor-icon-red"]]) {
+        [self.favoriteButtonProperty setImage:[UIImage imageNamed:@"favor-icon"] forState:UIControlStateNormal];
+    } else {
+    [self.favoriteButtonProperty setImage:[UIImage imageNamed:@"favor-icon-red"] forState:UIControlStateNormal];}
+}
 @end

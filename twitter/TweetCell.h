@@ -18,6 +18,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dot;
+@property (weak, nonatomic) IBOutlet UILabel *retweetLabel;
+@property (weak, nonatomic) IBOutlet UILabel *favoriteLabel;
+- (IBAction)retweetButton:(id)sender;
+- (IBAction)favoriteButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *retweenButtonProperty;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButtonProperty;
+
 
 
 @end

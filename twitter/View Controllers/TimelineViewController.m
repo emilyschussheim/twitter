@@ -14,6 +14,7 @@
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *timelineTableView;
 @property NSArray *tweetArray;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -24,17 +25,25 @@
     
     self.timelineTableView.dataSource = self;
     self.timelineTableView.delegate = self;
+    
+    [self getTweets];
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(getTweets:) forControlEvents:UIControlEventValueChanged];
+    
+}
 
-    [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
-        if (tweets) {
+ - (void)getTweets {
+     [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
+         if (tweets) {
             self.tweetArray = tweets;
             [self.timelineTableView reloadData];
-        } else {
+            [self.refreshControl endRefreshing];
+             } else {
             NSLog(@"Error getting home timeline: %@", error.localizedDescription);
-        }
-    }];
-    //UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-}
+             }
+         }];
+ }
 
 
 - (void)didReceiveMemoryWarning {
@@ -54,6 +63,8 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.tweetArray.count;
 }
+
+
 
 
 /*
