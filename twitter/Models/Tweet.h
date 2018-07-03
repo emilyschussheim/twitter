@@ -26,7 +26,7 @@
 
 //methods
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-+ (NSMutableArray *)tweetsWithArray:(NSArray *)dictionaries;
++ (NSMutableArray<Tweet *> *)tweetsWithArray:(NSArray<NSDictionary *> *)dictionaries;
 
 
 @end

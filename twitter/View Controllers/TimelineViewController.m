@@ -22,10 +22,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.timelineTableView.dataSource = self;
+    self.timelineTableView.delegate = self;
+    
     // Get timeline
     [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
         if (tweets) {
-            self.tweetArray = [Tweet tweetsWithArray:tweets];
+            self.tweetArray = tweets;
+            NSLog(@"%@", tweets);
+            [self.timelineTableView reloadData];
         } else {
             NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
         }
@@ -61,7 +66,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 
 
 @end
