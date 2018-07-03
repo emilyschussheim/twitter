@@ -17,7 +17,7 @@
         self.screenName = dictionary[@"screen_name"];
         
         NSString *URL = dictionary[@"profile_image_url"];
-        self.propicURL = [NSURL fileURLWithPath:URL];
+        self.propicURL = [NSURL URLWithString:URL];
 
     }
     return self;
