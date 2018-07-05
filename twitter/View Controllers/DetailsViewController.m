@@ -1,55 +1,74 @@
 //
-//  TweetCell.m
+//  DetailsViewController.m
 //  twitter
 //
-//  Created by Emily Schussheim on 7/2/18.
+//  Created by Emily Schussheim on 7/5/18.
 //  Copyright © 2018 Emerson Malca. All rights reserved.
 //
 
-#import "TweetCell.h"
-#import "Tweet.h"
-#import "User.h"
+#import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "APIManager.h"
-#import "NSDate+TimeAgo.h"
-#import "DateTools.h"
 
+@interface DetailsViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *propicImage;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tweetText;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButtonProperty;
+@property (weak, nonatomic) IBOutlet UILabel *retweetLabel;
+- (IBAction)retweetTapped:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *retweetButtonProperty;
+@property (weak, nonatomic) IBOutlet UILabel *faveLabel;
 
-@implementation TweetCell
+- (IBAction)faveTapped:(id)sender;
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
+@end
+
+@implementation DetailsViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setUI];
+    
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
-- (void)setTweet:(Tweet *)tweet {
-    _tweet = tweet;
+- (void)setUI {
     self.tweetText.text = self.tweet.text;
     [self.propicImage setImageWithURL:self.tweet.user.propicURL];
     self.nameLabel.text = self.tweet.user.name;
     self.usernameLabel.text = self.tweet.user.screenName;
     self.retweetLabel.text = [NSString stringWithFormat:@"%i", self.tweet.retweetCount];
-    self.favoriteLabel.text = [NSString stringWithFormat:@"%i", self.tweet.favoriteCount];
-    
-
-    NSDate *tweetDate = self.tweet.date;
-    NSString *date = [tweetDate timeAgo];
-    self.dateLabel.text = date;
-    
+    self.faveLabel.text = [NSString stringWithFormat:@"%i", self.tweet.favoriteCount];
+    if (self.tweet.retweeted) {
+        [self.retweetButtonProperty setImage:[UIImage imageNamed:@"retweet-icon-green"] forState:UIControlStateNormal];
+    }
+    if (self.tweet.favorited) {
+        [self.favoriteButtonProperty setImage:[UIImage imageNamed:@"favor-icon-red"] forState:UIControlStateNormal];
+    }
 }
 
-- (IBAction)retweetButton:(id)sender {
-    
-    if ([[self.retweenButtonProperty imageForState:UIControlStateNormal] isEqual: [UIImage imageNamed:@"retweet-icon-green"]]) {
-        [self.retweenButtonProperty setImage:[UIImage imageNamed:@"retweet-icon"] forState:UIControlStateNormal];
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+- (IBAction)retweetTapped:(id)sender {
+    if ([[self.retweetButtonProperty imageForState:UIControlStateNormal] isEqual: [UIImage imageNamed:@"retweet-icon-green"]]) {
+        [self.retweetButtonProperty setImage:[UIImage imageNamed:@"retweet-icon"] forState:UIControlStateNormal];
         self.tweet.retweeted = NO;
         self.tweet.retweetCount -= 1;
-        [self refreshData:self];
+        [self setUI];
         
         //make the post request
         [[APIManager shared] unretweet:self.tweet completion:^(Tweet *tweet, NSError *error) {
@@ -62,10 +81,10 @@
         }];
         
     } else {
-    [self.retweenButtonProperty setImage:[UIImage imageNamed:@"retweet-icon-green"] forState:UIControlStateNormal];
+        [self.retweetButtonProperty setImage:[UIImage imageNamed:@"retweet-icon-green"] forState:UIControlStateNormal];
         self.tweet.retweeted = YES;
         self.tweet.retweetCount += 1;
-        [self refreshData:self];
+        [self setUI];
         
         //make the post request
         [[APIManager shared] retweet:self.tweet completion:^(Tweet *tweet, NSError *error) {
@@ -78,15 +97,16 @@
         }];
         
     }
+    
 }
 
-- (IBAction)favoriteButton:(id)sender {
-    
+
+- (IBAction)faveTapped:(id)sender {
     if ([[self.favoriteButtonProperty imageForState:UIControlStateNormal] isEqual: [UIImage imageNamed:@"favor-icon-red"]]) {
         [self.favoriteButtonProperty setImage:[UIImage imageNamed:@"favor-icon"] forState:UIControlStateNormal];
         self.tweet.favorited = NO;
         self.tweet.favoriteCount -= 1;
-        [self refreshData:self];
+        [self setUI];
         
         //make the post request
         [[APIManager shared] unfavorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
@@ -98,10 +118,10 @@
         
     } else {
         
-    [self.favoriteButtonProperty setImage:[UIImage imageNamed:@"favor-icon-red"] forState:UIControlStateNormal];
+        [self.favoriteButtonProperty setImage:[UIImage imageNamed:@"favor-icon-red"] forState:UIControlStateNormal];
         self.tweet.favorited = YES;
         self.tweet.favoriteCount += 1;
-        [self refreshData:self];
+        [self setUI];
         
         //make the post request
         [[APIManager shared] favorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
@@ -112,13 +132,5 @@
         }];
     }
     
-    
-    // TODO: Update the local tweet model
-    // TODO: Update cell UI
-    // TODO: Send a POST request to the POST favorites/create endpoint
-}
-
-- (void)refreshData:(TweetCell *)tweetCell {
-    [self setTweet:tweetCell.tweet];
 }
 @end

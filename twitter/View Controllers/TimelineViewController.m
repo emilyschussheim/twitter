@@ -12,8 +12,11 @@
 #import "TweetCell.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "DetailsViewController.h"
+
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
+- (IBAction)composeTapped:(id)sender;
 @property (strong, nonatomic) IBOutlet UITableView *timelineTableView;
 @property NSArray *tweetArray;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -73,15 +76,13 @@
 
 
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    TweetCell *tappedTweet = sender;
+    DetailsViewController *detailsViewController = [segue destinationViewController];
+    detailsViewController.tweet = tappedTweet.tweet;
 }
-*/
+
 
 
 - (IBAction)logoutTapped:(id)sender {
@@ -92,5 +93,7 @@
     appDelegate.window.rootViewController = loginViewController;
     
     [[APIManager shared] logout];
+}
+- (IBAction)composeTapped:(id)sender {
 }
 @end
