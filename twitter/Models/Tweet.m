@@ -39,6 +39,7 @@
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
         NSDate *date = [formatter dateFromString:createdAtOriginalString];
+        self.date = date;
         formatter.dateStyle = NSDateFormatterShortStyle;
         formatter.timeStyle = NSDateFormatterNoStyle;
         formatter.dateStyle = NSDateFormatterShortStyle;

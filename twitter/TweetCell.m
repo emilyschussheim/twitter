@@ -12,6 +12,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "APIManager.h"
 #import "NSDate+TimeAgo.h"
+#import "DateTools.h"
 
 @implementation TweetCell
 
@@ -34,13 +35,10 @@
     self.retweetLabel.text = [NSString stringWithFormat:@"%i", self.tweet.retweetCount];
     self.favoriteLabel.text = [NSString stringWithFormat:@"%i", self.tweet.favoriteCount];
     
-     self.dateLabel.text = self.tweet.createdAtString;
-    //NSString *date = self.tweet.createdAtString;
-    
-    NSDate *testDate = [[NSDate alloc] initWithTimeIntervalSince1970:0];
-    NSString *ago = [testDate timeAgo];
-    NSLog(@"Output is: \"%@\"", ago);
-    //2011-11-12 17:19:25.608 Proj[0:0] Output is: "41 years ago"
+
+    NSDate *tweetDate = self.tweet.date;
+    NSString *date = [tweetDate timeAgo];
+    self.dateLabel.text = date;
     
 }
 
