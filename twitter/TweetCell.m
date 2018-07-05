@@ -11,6 +11,7 @@
 #import "User.h"
 #import "UIImageView+AFNetworking.h"
 #import "APIManager.h"
+#import "NSDate+TimeAgo.h"
 
 @implementation TweetCell
 
@@ -27,12 +28,19 @@
 - (void)setTweet:(Tweet *)tweet {
     _tweet = tweet;
     self.tweetText.text = self.tweet.text;
-    self.dateLabel.text = self.tweet.createdAtString;
     [self.propicImage setImageWithURL:self.tweet.user.propicURL];
     self.nameLabel.text = self.tweet.user.name;
     self.usernameLabel.text = self.tweet.user.screenName;
     self.retweetLabel.text = [NSString stringWithFormat:@"%i", self.tweet.retweetCount];
     self.favoriteLabel.text = [NSString stringWithFormat:@"%i", self.tweet.favoriteCount];
+    
+     self.dateLabel.text = self.tweet.createdAtString;
+    //NSString *date = self.tweet.createdAtString;
+    
+    NSDate *testDate = [[NSDate alloc] initWithTimeIntervalSince1970:0];
+    NSString *ago = [testDate timeAgo];
+    NSLog(@"Output is: \"%@\"", ago);
+    //2011-11-12 17:19:25.608 Proj[0:0] Output is: "41 years ago"
     
 }
 

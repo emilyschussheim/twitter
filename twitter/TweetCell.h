@@ -10,6 +10,7 @@
 #import "Tweet.h"
 #import "UIImageView+AFNetworking.h"
 
+
 @interface TweetCell : UITableViewCell
 @property (strong, nonatomic) Tweet *tweet;
 @property (weak, nonatomic) IBOutlet UIImageView *propicImage;
