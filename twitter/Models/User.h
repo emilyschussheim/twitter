@@ -13,6 +13,9 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *screenName;
 @property (strong, nonatomic) NSURL *propicURL;
+@property (strong, nonatomic) NSString *followersCount;
+@property (strong, nonatomic) NSString *followingCount;
+@property (strong, nonatomic) NSString *tweetCount;
 
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;

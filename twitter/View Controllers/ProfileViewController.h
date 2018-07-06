@@ -1,16 +1,15 @@
 //
-//  TimelineViewController.h
+//  ProfileViewController.h
 //  twitter
 //
-//  Created by emersonmalca on 5/28/18.
+//  Created by Emily Schussheim on 7/6/18.
 //  Copyright © 2018 Emerson Malca. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "User.h"
 
-
-@interface TimelineViewController : UIViewController
+@interface ProfileViewController : UIViewController
 @property (strong, nonatomic) User *user;
 
 @end

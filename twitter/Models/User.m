@@ -18,6 +18,10 @@
         
         NSString *URL = dictionary[@"profile_image_url"];
         self.propicURL = [NSURL URLWithString:URL];
+        
+        self.followersCount = [NSString stringWithFormat:@"%@", dictionary[@"followers_count"]];
+        self.followingCount = [NSString stringWithFormat:@"%@", dictionary[@"friends_count"]];
+        self.tweetCount = self.followingCount = [NSString stringWithFormat:@"%@", dictionary[@"statuses_count"]];
 
     }
     return self;
