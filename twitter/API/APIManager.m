@@ -63,6 +63,20 @@ static NSString * const consumerSecret =     @"8116H7cVRMsnGyp5YKy393MOKQ39Igx6U
 
 }
 
+- (void)getUserInfoWithCompletion:(void(^)(User *user, NSError *error))completion {
+    
+    [self GET:@"1.1/account/verify_credentials.json"
+   parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *userDictionary) {
+       // Success
+       User *user = [[User alloc] initWithDictionary:userDictionary];
+       completion(user, nil);
+   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+       // There was a problem
+       completion(nil, error);
+   }];
+    
+}
+
 - (void)postStatusWithText:(NSString *)text completion:(void (^)(Tweet *, NSError *))completion{
     NSString *urlString = @"1.1/statuses/update.json";
     NSDictionary *parameters = @{@"status": text};

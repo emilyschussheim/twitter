@@ -8,6 +8,7 @@
 
 #import "ProfileViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "APIManager.h"
 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -22,19 +23,39 @@
 @implementation ProfileViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    self.usernameLabel.text = self.user.name;
-    self.tagLabel.text = self.user.screenName;
-    self.tweetCount.text = self.user.tweetCount;
-    self.followersCount.text = self.user.followersCount;
-    self.followingLabel.text = self.user.followingCount;
-    [self.propicImage setImageWithURL:self.user.propicURL];
+    [self getUserInformation];
+    [self setProfileUI];
+   
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void) setProfileUI {
+    
+    self.usernameLabel.text = self.user.name;
+    self.tagLabel.text = self.user.screenName;
+    self.tweetCount.text = self.user.tweetCount;
+    self.followersCount.text = self.user.followersCount;
+    self.followingLabel.text = self.user.followingCount;
+    [self.propicImage setImageWithURL:self.user.propicURL];
+    
+}
+- (void) getUserInformation {
+    [[APIManager shared] getUserInfoWithCompletion:^(User *user, NSError *error) {
+        if (user) {
+            self.user = user;
+            [self setProfileUI];
+        } else {
+            NSLog(@"Error getting home timeline: %@", error.localizedDescription);
+        }
+    }];
+}
+
+
 
 /*
 #pragma mark - Navigation
