@@ -25,6 +25,7 @@
 		F3A268FA20EF4251009CD3C2 /* TweetsTabBarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A268F920EF4251009CD3C2 /* TweetsTabBarControllerViewController.m */; };
 		F3A268FD20EF4D9C009CD3C2 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A268FC20EF4D9C009CD3C2 /* ProfileViewController.m */; };
 		F3A2690020EFEA7F009CD3C2 /* TweetProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A268FF20EFEA7F009CD3C2 /* TweetProfileViewController.m */; };
+		F3A2690320F00A49009CD3C2 /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A2690220F00A49009CD3C2 /* InfiniteScrollActivityView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,8 @@
 		F3A268FC20EF4D9C009CD3C2 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = "View Controllers/ProfileViewController.m"; sourceTree = "<group>"; };
 		F3A268FE20EFEA7F009CD3C2 /* TweetProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TweetProfileViewController.h; path = "View Controllers/TweetProfileViewController.h"; sourceTree = "<group>"; };
 		F3A268FF20EFEA7F009CD3C2 /* TweetProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TweetProfileViewController.m; path = "View Controllers/TweetProfileViewController.m"; sourceTree = "<group>"; };
+		F3A2690120F00A49009CD3C2 /* InfiniteScrollActivityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollActivityView.h; sourceTree = "<group>"; };
+		F3A2690220F00A49009CD3C2 /* InfiniteScrollActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollActivityView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 				6AD2790520BCC0380085BC29 /* LoginViewController.m */,
 				6AD2790720BCC04D0085BC29 /* TimelineViewController.h */,
 				6AD2790820BCC04D0085BC29 /* TimelineViewController.m */,
+				F3A2690120F00A49009CD3C2 /* InfiniteScrollActivityView.h */,
+				F3A2690220F00A49009CD3C2 /* InfiniteScrollActivityView.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				F3A268F420EEB1CE009CD3C2 /* DetailsViewController.m in Sources */,
 				F3412A7A20EAD32100377035 /* TweetCell.m in Sources */,
 				F3412A8020EC153F00377035 /* ComposeViewController.m in Sources */,
+				F3A2690320F00A49009CD3C2 /* InfiniteScrollActivityView.m in Sources */,
 				6AD278E820BC4B970085BC29 /* main.m in Sources */,
 				F3412A7420EAC83C00377035 /* Tweet.m in Sources */,
 				6AD2790620BCC0380085BC29 /* LoginViewController.m in Sources */,
