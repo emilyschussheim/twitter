@@ -31,10 +31,9 @@ The following **optional** features are implemented:
    - Contains the user header view: picture and tagline
    - Contains a section with the users basic stats: # tweets, # following, # followers
    - [ ] Profile view should include that user's timeline
->>>>>>> 3be936ff4a48b1aee7c0e920c2de5c13082be5b4
 - [X] User should display the relative timestamp for each tweet "8m", "7h"
 - [X] User should be able to unretweet and unfavorite and should decrement the retweet and favorite count. Refer to [[this guide|unretweeting]] for help on implementing unretweeting.
-- [ ] Links in tweets are clickable.
+- [X] Links in tweets are clickable.
 - [X] User can tap the profile image in any tweet to see another user's profile
 <<<<<<< HEAD
 - Contains the user header view: picture and tagline
@@ -42,7 +41,6 @@ The following **optional** features are implemented:
 =======
    - Contains the user header view: picture and tagline
    - Contains a section with the users basic stats: # tweets, # following, # followers
->>>>>>> 3be936ff4a48b1aee7c0e920c2de5c13082be5b4
 - [X] User can load more tweets once they reach the bottom of the feed using infinite loading similar to the actual Twitter client.
 - [X] When composing, you should have a countdown for the number of characters remaining for the tweet (out of 140) (**1 point**)
 - [X] After creating a new tweet, a user should be able to view it in the timeline immediately without refetching the timeline from the network.
@@ -55,8 +53,6 @@ The following **optional** features are implemented:
 
 =======
         - NOTE: tab bar switches between timeline view and profile view
-        
->>>>>>> 3be936ff4a48b1aee7c0e920c2de5c13082be5b4
 - [ ] Profile Page: pulling down the profile page should blur and resize the header image. (**4 points**)
 
 
@@ -68,18 +64,19 @@ The following **additional** features are implemented:
 - Retweet and Favorite status of retweet/favorite buttons transfers between view controllers!
 =======
        - Retweet and Favorite status of retweet/favorite buttons transfers between view controllers!
->>>>>>> 3be936ff4a48b1aee7c0e920c2de5c13082be5b4
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1.  Comparison / Analysis of delegation/protocol and blocks and how they're useful for different situations
+2.  Strategies for sharing objects between view controllers  
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/33fEjUN.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+[img]https://i.imgur.com/33fEjUN.gif[/img]
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -87,16 +84,20 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Describe any challenges encountered while building the app.
 
+I was confused by the ways different view controllers could pass objects or connect earlier in the week, but I'm more comfortable with that now.  
+
 ## Credits
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
 
+-DateTools Pod for the time stamps
+
 ## License
 
 <<<<<<< HEAD
-Copyright [yyyy] [name of copyright owner]
+Copyright [2018] [Emily Schussheim]
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
