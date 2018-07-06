@@ -101,12 +101,6 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="This is the text of my tweet! AYY" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMe-v1-KxN">
-                                            <rect key="frame" x="72" y="27" width="283" height="18"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKR-Lz-kcv">
                                             <rect key="frame" x="89" y="118" width="31" height="30"/>
                                             <constraints>
@@ -157,29 +151,36 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="This is the text of my tweet! AYY" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2ah-c0-B8c">
+                                            <rect key="frame" x="71" y="23" width="240" height="87"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="13"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                        </textView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="HMe-v1-KxN" firstAttribute="leading" secondItem="sUZ-2u-qet" secondAttribute="trailing" constant="8" id="1XL-QI-89m"/>
                                         <constraint firstItem="WKd-Zp-9Bd" firstAttribute="leading" secondItem="FyI-lv-4DR" secondAttribute="trailing" constant="1" id="4Bp-Kg-7wf"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="HMe-v1-KxN" secondAttribute="trailing" constant="4" id="5Mf-Ai-h14"/>
                                         <constraint firstItem="sUZ-2u-qet" firstAttribute="leading" secondItem="yT5-pt-Q4J" secondAttribute="leading" id="BTg-lX-ZIc"/>
                                         <constraint firstAttribute="trailing" secondItem="56P-Yx-lwv" secondAttribute="trailing" constant="3" id="Ivb-jh-ESH"/>
+                                        <constraint firstItem="2ah-c0-B8c" firstAttribute="leading" secondItem="sUZ-2u-qet" secondAttribute="trailing" constant="7" id="JLC-md-YDX"/>
                                         <constraint firstAttribute="trailing" secondItem="WKd-Zp-9Bd" secondAttribute="trailing" constant="89" id="JPf-fI-pnE"/>
                                         <constraint firstAttribute="bottom" secondItem="GkR-io-aKs" secondAttribute="bottom" constant="6.5" id="NLP-gv-j0S"/>
                                         <constraint firstItem="56P-Yx-lwv" firstAttribute="top" secondItem="yT5-pt-Q4J" secondAttribute="top" constant="10" id="OG2-7N-QJS"/>
                                         <constraint firstAttribute="bottom" secondItem="WKd-Zp-9Bd" secondAttribute="bottom" constant="5.5" id="Rvz-zR-qJv"/>
                                         <constraint firstItem="GkR-io-aKs" firstAttribute="leading" secondItem="yT5-pt-Q4J" secondAttribute="leading" constant="119" id="SYB-Yq-7jy"/>
                                         <constraint firstItem="7u4-Tv-DOJ" firstAttribute="leading" secondItem="sUZ-2u-qet" secondAttribute="trailing" constant="7" id="Ukg-HH-NHF"/>
-                                        <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="HMe-v1-KxN" secondAttribute="bottom" constant="5" id="cZI-fr-Udf"/>
+                                        <constraint firstItem="FyI-lv-4DR" firstAttribute="top" secondItem="2ah-c0-B8c" secondAttribute="bottom" constant="7" id="bQe-4F-LtY"/>
                                         <constraint firstAttribute="bottom" secondItem="FyI-lv-4DR" secondAttribute="bottom" constant="0.5" id="cn4-5H-FWa"/>
                                         <constraint firstAttribute="bottom" secondItem="JKR-Lz-kcv" secondAttribute="bottom" constant="-0.5" id="ekV-k3-xgJ"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="sUZ-2u-qet" secondAttribute="bottom" constant="5" id="epv-7o-ycH"/>
                                         <constraint firstItem="7u4-Tv-DOJ" firstAttribute="top" secondItem="yT5-pt-Q4J" secondAttribute="top" constant="7" id="hNb-Qm-ocG"/>
                                         <constraint firstItem="XQa-cj-mgi" firstAttribute="top" secondItem="yT5-pt-Q4J" secondAttribute="top" constant="10" id="ilH-25-QuL"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="2ah-c0-B8c" secondAttribute="trailing" constant="48" id="mQ2-6j-GSO"/>
                                         <constraint firstItem="56P-Yx-lwv" firstAttribute="leading" secondItem="XQa-cj-mgi" secondAttribute="trailing" constant="31.5" id="pYA-Nh-jly"/>
                                         <constraint firstItem="sUZ-2u-qet" firstAttribute="top" secondItem="yT5-pt-Q4J" secondAttribute="top" id="pxI-Ku-Jgh"/>
                                         <constraint firstItem="JKR-Lz-kcv" firstAttribute="leading" secondItem="yT5-pt-Q4J" secondAttribute="leading" constant="89" id="qd4-ir-mXW"/>
-                                        <constraint firstItem="HMe-v1-KxN" firstAttribute="top" secondItem="7u4-Tv-DOJ" secondAttribute="bottom" constant="4" id="x4N-1t-keR"/>
+                                        <constraint firstItem="2ah-c0-B8c" firstAttribute="top" secondItem="7u4-Tv-DOJ" secondAttribute="bottom" id="snl-3d-uIU"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -190,7 +191,7 @@
                                     <outlet property="propicImage" destination="sUZ-2u-qet" id="ieU-v0-tcX"/>
                                     <outlet property="retweenButtonProperty" destination="JKR-Lz-kcv" id="B6w-GI-lh1"/>
                                     <outlet property="retweetLabel" destination="GkR-io-aKs" id="gO8-G0-UBR"/>
-                                    <outlet property="tweetText" destination="HMe-v1-KxN" id="GM8-gb-pSx"/>
+                                    <outlet property="tweetText" destination="2ah-c0-B8c" id="jVR-KG-XmH"/>
                                     <outlet property="usernameLabel" destination="XQa-cj-mgi" id="38i-8s-Mhh"/>
                                     <segue destination="6nL-4f-Mrb" kind="show" identifier="detailsSegue" id="mOI-Gn-bgA"/>
                                 </connections>
@@ -219,7 +220,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQh-hN-GQg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2668" y="208"/>
+            <point key="canvasLocation" x="2668" y="207.34632683658174"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="YqP-Vc-FYb">
