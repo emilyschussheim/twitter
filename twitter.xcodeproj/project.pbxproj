@@ -22,7 +22,6 @@
 		F3412A7A20EAD32100377035 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3412A7920EAD32100377035 /* TweetCell.m */; };
 		F3412A8020EC153F00377035 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3412A7F20EC153F00377035 /* ComposeViewController.m */; };
 		F3A268F420EEB1CE009CD3C2 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A268F320EEB1CE009CD3C2 /* DetailsViewController.m */; };
-		F3A268F720EEC727009CD3C2 /* ReplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A268F620EEC727009CD3C2 /* ReplyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,8 +54,6 @@
 		F3412A7F20EC153F00377035 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		F3A268F220EEB1CE009CD3C2 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DetailsViewController.h; path = "View Controllers/DetailsViewController.h"; sourceTree = "<group>"; };
 		F3A268F320EEB1CE009CD3C2 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = DetailsViewController.m; path = "View Controllers/DetailsViewController.m"; sourceTree = "<group>"; };
-		F3A268F520EEC727009CD3C2 /* ReplyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ReplyViewController.h; path = "View Controllers/ReplyViewController.h"; sourceTree = "<group>"; };
-		F3A268F620EEC727009CD3C2 /* ReplyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ReplyViewController.m; path = "View Controllers/ReplyViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +104,6 @@
 				6AD278D820BC4B950085BC29 /* AppDelegate.h */,
 				6AD278D920BC4B950085BC29 /* AppDelegate.m */,
 				6AD278DE20BC4B950085BC29 /* Main.storyboard */,
-				F3A268F520EEC727009CD3C2 /* ReplyViewController.h */,
-				F3A268F620EEC727009CD3C2 /* ReplyViewController.m */,
 				F3A268F220EEB1CE009CD3C2 /* DetailsViewController.h */,
 				F3A268F320EEB1CE009CD3C2 /* DetailsViewController.m */,
 				F3412A7820EAD32100377035 /* TweetCell.h */,
@@ -288,7 +283,6 @@
 				6AD278F320BCA6020085BC29 /* BDBOAuth1SessionManager+SFAuthenticationSession.m in Sources */,
 				F3412A7120EAC75300377035 /* User.m in Sources */,
 				F3A268F420EEB1CE009CD3C2 /* DetailsViewController.m in Sources */,
-				F3A268F720EEC727009CD3C2 /* ReplyViewController.m in Sources */,
 				F3412A7A20EAD32100377035 /* TweetCell.m in Sources */,
 				F3412A8020EC153F00377035 /* ComposeViewController.m in Sources */,
 				6AD278E820BC4B970085BC29 /* main.m in Sources */,

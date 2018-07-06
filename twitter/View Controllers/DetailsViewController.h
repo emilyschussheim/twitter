@@ -11,5 +11,6 @@
 
 @interface DetailsViewController : UIViewController
 @property (strong, nonatomic) Tweet *tweet;
+@property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end

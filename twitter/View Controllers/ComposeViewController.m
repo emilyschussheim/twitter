@@ -8,8 +8,9 @@
 
 #import "ComposeViewController.h"
 #import "APIManager.h"
+#define MAXIMUM_NUMBER_OF_CHARACTERS 140
 
-@interface ComposeViewController ()
+@interface ComposeViewController () <UITextViewDelegate>
 
 @end
 
@@ -17,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.composeTextView.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -40,15 +42,27 @@
     [[APIManager shared] postStatusWithText:tweetString completion:^(Tweet *tweet, NSError *error) {
         if (tweet) {
             NSLog(@"tweet exists??");
+            [self.delegate didTweet:tweet];
             [self dismissViewControllerAnimated:true completion:nil];
         } else {
             NSLog(@"the tweet didnt get made");
             NSLog(@"THIS IS THE ERROR: %@", error);
         }
     }];
+    
 }
 
 - (IBAction)closeButton:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    NSUInteger length;
+    length = [self.composeTextView.text length];
+    
+    NSUInteger left = MAXIMUM_NUMBER_OF_CHARACTERS - length;
+    
+    self.characterCount.text = [NSString stringWithFormat:@"%lu", left];
 }
 @end

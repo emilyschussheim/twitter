@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *retweetLabel;
 - (IBAction)retweetTapped:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *retweetButtonProperty;
+- (IBAction)replyButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *faveLabel;
 
 - (IBAction)faveTapped:(id)sender;
@@ -131,6 +132,19 @@
             }
         }];
     }
+    
+}
+- (IBAction)replyButton:(id)sender {
+    NSString *tweetString = self.textView.text;
+    [[APIManager shared] replyWithText:tweetString andTweetId:self.tweet.idStr completion:^(Tweet *tweet, NSError *error) {
+            if (tweet) {
+            NSLog(@"tweet exists??");
+            [self dismissViewControllerAnimated:true completion:nil];
+        } else {
+            NSLog(@"the tweet didnt get made");
+            NSLog(@"THIS IS THE ERROR: %@", error);
+        }
+    }];
     
 }
 @end

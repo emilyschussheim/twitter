@@ -13,16 +13,14 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "DetailsViewController.h"
+#import "ComposeViewController.h"
 
 
-@interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
-- (IBAction)composeTapped:(id)sender;
+@interface TimelineViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *timelineTableView;
-@property NSArray *tweetArray;
+@property (strong, nonatomic) NSArray *tweetArray;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
-@property BOOL composeWasTapped;
 - (IBAction)logoutTapped:(id)sender;
-- (IBAction)secretButtonTapped:(id)sender;
 
 @end
 
@@ -30,7 +28,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.composeWasTapped = NO;
     
     self.timelineTableView.dataSource = self;
     self.timelineTableView.delegate = self;
@@ -75,15 +72,21 @@
 
 
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if (self.composeWasTapped == YES) {
-//        TweetCell *tappedTweet = sender;
-//        DetailsViewController *detailsViewController = [segue destinationViewController];
-//        detailsViewController.tweet = tappedTweet.tweet;
-//    } else {
-//        
-//    }
-//}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"detailsSegue"]) {
+        TweetCell *tappedTweet = sender;
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.tweet = tappedTweet.tweet;
+    }
+    
+    if ([segue.identifier isEqualToString:@"composeSegue"]) {
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+        composeController.delegate = self;
+    }
+
+
+}
 
 
 
@@ -97,17 +100,12 @@
     [[APIManager shared] logout];
 }
 
-- (IBAction)secretButtonTapped:(id)sender {
-    
-    - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-    
-    TweetCell *tappedTweet = sender;
-    //DetailsViewController *detailsViewController = [segue destinationViewController];
-    DetailsViewController.tweet = tappedTweet.tweet;
-    
-}
-- (IBAction)composeTapped:(id)sender {
 
-    
+- (void)didTweet:(Tweet *)tweet {
+    self.tweetArray = [self.tweetArray arrayByAddingObject:tweet];
+    [self.timelineTableView reloadData];
+    [self getTweets];
 }
+
+
 @end

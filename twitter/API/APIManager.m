@@ -61,27 +61,6 @@ static NSString * const consumerSecret =     @"8116H7cVRMsnGyp5YKy393MOKQ39Igx6U
        completion(nil, error);
    }];
 
-//    [self GET:@"1.1/statuses/home_timeline.json"
-//   parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray *  _Nullable tweetDictionaries) {
-//
-//       // Manually cache the tweets. If the request fails, restore from cache if possible.
-//       NSData *data = [NSKeyedArchiver archivedDataWithRootObject:tweetDictionaries];
-//       [[NSUserDefaults standardUserDefaults] setValue:data forKey:@"hometimeline_tweets"];
-//
-//       completion(tweetDictionaries, nil);
-//
-//   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//
-//       NSArray *tweetDictionaries = nil;
-//
-//       // Fetch tweets from cache if possible
-//       NSData *data = [[NSUserDefaults standardUserDefaults] valueForKey:@"hometimeline_tweets"];
-//       if (data != nil) {
-//           tweetDictionaries = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-//       }
-//
-//       completion(tweetDictionaries, error);
-//   }];
 }
 
 - (void)postStatusWithText:(NSString *)text completion:(void (^)(Tweet *, NSError *))completion{
@@ -98,7 +77,7 @@ static NSString * const consumerSecret =     @"8116H7cVRMsnGyp5YKy393MOKQ39Igx6U
 
 - (void)replyWithText:(NSString *)text andTweetId:(NSString *)userID completion:(void (^)(Tweet *, NSError *))completion{
     NSString *urlString = @"1.1/statuses/update.json";
-    NSDictionary *parameters = @{@"status": text};
+    NSDictionary *parameters = @{@"status": text, @"in_reply_to_status_id_str": userID};
     
     [self POST:urlString parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *  _Nullable tweetDictionary) {
         Tweet *tweet = [[Tweet alloc]initWithDictionary:tweetDictionary];
