@@ -23,15 +23,26 @@ The following **optional** features are implemented:
 
 - [X] Tweet Details Page: User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
 - [X] User can view their profile in a *profile tab*
+<<<<<<< HEAD
 - Contains the user header view: picture and tagline
 - Contains a section with the users basic stats: # tweets, # following, # followers
 - [ ] Profile view should include that user's timeline
+=======
+   - Contains the user header view: picture and tagline
+   - Contains a section with the users basic stats: # tweets, # following, # followers
+   - [ ] Profile view should include that user's timeline
+>>>>>>> 3be936ff4a48b1aee7c0e920c2de5c13082be5b4
 - [X] User should display the relative timestamp for each tweet "8m", "7h"
 - [X] User should be able to unretweet and unfavorite and should decrement the retweet and favorite count. Refer to [[this guide|unretweeting]] for help on implementing unretweeting.
 - [ ] Links in tweets are clickable.
 - [X] User can tap the profile image in any tweet to see another user's profile
+<<<<<<< HEAD
 - Contains the user header view: picture and tagline
 - Contains a section with the users basic stats: # tweets, # following, # followers
+=======
+   - Contains the user header view: picture and tagline
+   - Contains a section with the users basic stats: # tweets, # following, # followers
+>>>>>>> 3be936ff4a48b1aee7c0e920c2de5c13082be5b4
 - [X] User can load more tweets once they reach the bottom of the feed using infinite loading similar to the actual Twitter client.
 - [X] When composing, you should have a countdown for the number of characters remaining for the tweet (out of 140) (**1 point**)
 - [X] After creating a new tweet, a user should be able to view it in the timeline immediately without refetching the timeline from the network.
@@ -39,8 +50,13 @@ The following **optional** features are implemented:
 - [ ] User sees embedded images in tweet if available 
 - [X] User can switch between timeline, mentions, or profile view through a tab bar (**3 points**)
 
+<<<<<<< HEAD
 - NOTE: tab bar switches between timeline view and profile view
 
+=======
+        - NOTE: tab bar switches between timeline view and profile view
+        
+>>>>>>> 3be936ff4a48b1aee7c0e920c2de5c13082be5b4
 - [ ] Profile Page: pulling down the profile page should blur and resize the header image. (**4 points**)
 
 
@@ -48,7 +64,11 @@ The following **additional** features are implemented:
 
 - [X] List anything else that you can get done to improve the app functionality!
 
+<<<<<<< HEAD
 - Retweet and Favorite status of retweet/favorite buttons transfers between view controllers!
+=======
+       - Retweet and Favorite status of retweet/favorite buttons transfers between view controllers!
+>>>>>>> 3be936ff4a48b1aee7c0e920c2de5c13082be5b4
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -75,6 +95,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## License
 
+<<<<<<< HEAD
 Copyright [yyyy] [name of copyright owner]
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -88,3 +109,18 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+=======
+    Copyright [yyyy] [name of copyright owner]
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+>>>>>>> 3be936ff4a48b1aee7c0e920c2de5c13082be5b4
