@@ -20,7 +20,9 @@
 @property (strong, nonatomic) IBOutlet UITableView *timelineTableView;
 @property NSArray *tweetArray;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property BOOL composeWasTapped;
 - (IBAction)logoutTapped:(id)sender;
+- (IBAction)secretButtonTapped:(id)sender;
 
 @end
 
@@ -28,6 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.composeWasTapped = NO;
     
     self.timelineTableView.dataSource = self;
     self.timelineTableView.delegate = self;
@@ -50,22 +53,17 @@
              }
          [self.refreshControl endRefreshing];
          }];
-     
-     //[task resume];
  }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     TweetCell *tweetCell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
-    
     tweetCell.tweet = self.tweetArray[indexPath.row];
-    
     return tweetCell;
 }
 
@@ -77,11 +75,15 @@
 
 
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    TweetCell *tappedTweet = sender;
-    DetailsViewController *detailsViewController = [segue destinationViewController];
-    detailsViewController.tweet = tappedTweet.tweet;
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if (self.composeWasTapped == YES) {
+//        TweetCell *tappedTweet = sender;
+//        DetailsViewController *detailsViewController = [segue destinationViewController];
+//        detailsViewController.tweet = tappedTweet.tweet;
+//    } else {
+//        
+//    }
+//}
 
 
 
@@ -94,6 +96,18 @@
     
     [[APIManager shared] logout];
 }
+
+- (IBAction)secretButtonTapped:(id)sender {
+    
+    - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+    
+    TweetCell *tappedTweet = sender;
+    //DetailsViewController *detailsViewController = [segue destinationViewController];
+    DetailsViewController.tweet = tappedTweet.tweet;
+    
+}
 - (IBAction)composeTapped:(id)sender {
+
+    
 }
 @end
