@@ -24,6 +24,7 @@
 		F3A268F420EEB1CE009CD3C2 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A268F320EEB1CE009CD3C2 /* DetailsViewController.m */; };
 		F3A268FA20EF4251009CD3C2 /* TweetsTabBarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A268F920EF4251009CD3C2 /* TweetsTabBarControllerViewController.m */; };
 		F3A268FD20EF4D9C009CD3C2 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A268FC20EF4D9C009CD3C2 /* ProfileViewController.m */; };
+		F3A2690020EFEA7F009CD3C2 /* TweetProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A268FF20EFEA7F009CD3C2 /* TweetProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,8 @@
 		F3A268F920EF4251009CD3C2 /* TweetsTabBarControllerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TweetsTabBarControllerViewController.m; path = "View Controllers/TweetsTabBarControllerViewController.m"; sourceTree = "<group>"; };
 		F3A268FB20EF4D9C009CD3C2 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProfileViewController.h; path = "View Controllers/ProfileViewController.h"; sourceTree = "<group>"; };
 		F3A268FC20EF4D9C009CD3C2 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ProfileViewController.m; path = "View Controllers/ProfileViewController.m"; sourceTree = "<group>"; };
+		F3A268FE20EFEA7F009CD3C2 /* TweetProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TweetProfileViewController.h; path = "View Controllers/TweetProfileViewController.h"; sourceTree = "<group>"; };
+		F3A268FF20EFEA7F009CD3C2 /* TweetProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TweetProfileViewController.m; path = "View Controllers/TweetProfileViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				6AD278D820BC4B950085BC29 /* AppDelegate.h */,
 				6AD278D920BC4B950085BC29 /* AppDelegate.m */,
 				6AD278DE20BC4B950085BC29 /* Main.storyboard */,
+				F3A268FE20EFEA7F009CD3C2 /* TweetProfileViewController.h */,
+				F3A268FF20EFEA7F009CD3C2 /* TweetProfileViewController.m */,
 				F3A268FB20EF4D9C009CD3C2 /* ProfileViewController.h */,
 				F3A268FC20EF4D9C009CD3C2 /* ProfileViewController.m */,
 				F3A268F820EF4251009CD3C2 /* TweetsTabBarControllerViewController.h */,
@@ -290,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3A2690020EFEA7F009CD3C2 /* TweetProfileViewController.m in Sources */,
 				F3A268FA20EF4251009CD3C2 /* TweetsTabBarControllerViewController.m in Sources */,
 				6AD278F320BCA6020085BC29 /* BDBOAuth1SessionManager+SFAuthenticationSession.m in Sources */,
 				F3412A7120EAC75300377035 /* User.m in Sources */,

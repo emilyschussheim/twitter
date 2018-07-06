@@ -16,7 +16,7 @@
 #import "ComposeViewController.h"
 
 
-@interface TimelineViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface TimelineViewController () <TweetCellDelegate, ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *timelineTableView;
 @property (strong, nonatomic) NSArray *tweetArray;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -40,6 +40,10 @@
     
 }
 
+- (void)tweetCell:(TweetCell *)tweetCell didTap:(User *)user{
+    [self performSegueWithIdentifier:@"UsersProfileSegue" sender:user];
+}
+
 - (void)getTweets {
      [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
          if (tweets) {
@@ -61,16 +65,13 @@
     
     TweetCell *tweetCell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
     tweetCell.tweet = self.tweetArray[indexPath.row];
+    tweetCell.delegate = self;
     return tweetCell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.tweetArray.count;
 }
-
-
-
-
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"detailsSegue"]) {
